@@ -1,0 +1,6 @@
+<div class="list-group mainBorder rounded-0" xmlns:th="http://wwww.thymeleaf.org">
+	<a class="list-group-item list-group-item-action mainColor text-white fw-bold borderBottom" aria-current="true">
+	  <b><i class="fa-solid fa-table-list me-2"></i></b> [[#{sidebar.category}]]
+	</a>
+	<a th:each="c:${cates}" th:href="@{|/product/list?cid=${c.id}|}" class="list-group-item list-group-item-action"><b><i class="fa-solid fa-gift me-2"></i></b> [[${c.name}]]</a>
+</div>

@@ -1,0 +1,58 @@
+<nav xmlns:th="http://wwww.thymeleaf.org" class="navbar navbar-expand-lg navbar-dark bg-dark borderBottom">
+	<link rel="stylesheet" th:href="@{|/assets/css/_menu.css|}" >
+	<div class="container-fluid">
+	  <a class="navbar-brand" th:href="@{/}">T-Shop</a>
+	  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			<li class="nav-item dropdown">
+	          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+	            [(#{menu.language})]
+	          </a>
+	          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+	            <li><a class="dropdown-item language" href="?lang=vi"><i class="vietnam flag"></i>Việt Nam</a></li>
+	            <li><a class="dropdown-item language" href="?lang=en"><i class="united states flag"></i>English</a></li>
+	          </ul>
+	        </li>
+		  <th:block th:if="${#request.remoteUser}">
+		  	 <li class="nav-item">
+				<a class="nav-link" th:href="@{/security/logoff}">[[#{menu.logout}]]</a>
+		  	 </li>
+			 <li class="nav-item">
+				 <a class="nav-link" th:href="@{/order/list}">[[#{menu.order}]]</a>
+			  </li>
+			  <li class="nav-item" th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
+				<a class="nav-link" th:href="@{/admin/home/index}">[[#{menu.admin}]]</a>
+			  </li>
+		  </th:block>
+		  <th:block th:unless="${#request.remoteUser}">
+		  	<li class="nav-item">
+				<a class="nav-link" th:href="@{/security/login/form}">[[#{menu.login}]]</a>
+		  	</li>
+		  </th:block>
+		</ul>
+		<ul class="navbar-nav d-flex mb-0 text-white">
+		  	<li class="nav-item me-0" th:if="${#request.remoteUser}">
+				<a class="nav-link" href="#">[[#{menu.welcome}]] [[${#request.remoteUser}]]</a>
+		  	</li>
+		</ul>
+	  </div>
+	</div>
+</nav>
+<script type="text/javascript">
+		$(document).ready(function() {
+			$(".language").click(function(){
+				var url = $(this).prop("href");
+				console.log(url);
+				$.ajax({
+					url:url,
+				}).then(resp=>{	
+					location.reload();
+				});
+				
+				return false;
+			})
+		})
+</script>

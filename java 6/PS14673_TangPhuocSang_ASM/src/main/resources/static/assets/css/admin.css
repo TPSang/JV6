@@ -1,0 +1,58 @@
+:root{
+    --mainColor:#161d24;
+    --mainColor2:#BAB1AD;
+    /* --mainColor:#41b92c; */
+    --inputTextColor:rgb(236, 233, 233);
+    --inputTextColorFocus:#ffffff;
+    --spacing:15px;
+    --myRed:#F93154;
+    --myYellow:#FFC107;
+    --myYellow1:#F39C12;
+    --myBlue:#1266F1;
+    --myGreen:#00B74A;
+    --myAqua:#39C0ED;
+    --myWhite:#FBFBFB;
+    --myBlack:#262626;
+    --myOrange:#FD7E14;
+    --myPink:#E83E8C;
+    --myGray:#BAB1AD;
+    --myPurple:#6610F2;
+    --myBorderRadius:12px;
+    --myTrueWhite: #ffffff;
+    --myWhite2:#F1F1F1
+}
+.mainColor{
+    background-color:var(--mainColor);
+}
+.mainColor2{
+	background-color:var(--mainColor2);
+}
+.bg-green{background-color: var(--myGreen) !important;}
+.bg-red{background-color: var(--myRed) !important;}
+.bg-yellow{background-color: var(--myYellow) !important;}
+.bg-yellow1{background-color: var(--myYellow1) !important;}
+.bg-blue{background-color: var(--myBlue) !important;}
+.bg-aqua{background-color: var(--myAqua) !important;}
+.bg-white{background-color: var(--myWhite) !important;}
+.bg-white2{background-color: var(--myWhite2) !important;}
+.bg-black{background-color: var(--myBlack) !important}
+.bg-orange{background-color: var(--myOrange) !important;}
+.bg-pink{background-color: var(--myPink) !important;}
+.bg-gray{background-color: var(--myGray) !important;}
+.bg-purple{background-color: var(--myPurple) !important;}
+.bg-truewhite{background-color: var(--myTrueWhite) !important;}
+
+.font-green{color: var(--myGreen);}
+.font-red{color: var(--myRed);}
+.font-yellow{color: var(--myYellow);}
+.font-blue{color: var(--myBlue);}
+.font-aqua{color: var(--myAqua);}
+.font-white{color: var(--myWhite);}
+.font-black{color: var(--myBlack)}
+.font-orange{color: var(--myOrange);}
+.font-pink{color: var(--myPink);}
+.font-gray{color: var(--myGray);}
+.font-purple{color: var(--myPurple);}
+tbody>tr>th,tbody>tr>td{
+	vertical-align: middle;
+}

@@ -1,0 +1,49 @@
+<html xmlns:th="http://wwww.thymeleaf.org" th:replace="~{/layout/index::dynamic(~{::main})}">
+	<main class="row mt-3">
+		<div th:each="p:${items.content}" class="col-sm-4 mb-3">
+			<div class="card text-center poly-item rounded-0">
+				<div class="card-header mainColor rounded-0">
+					<div class="card-title">[[${p.name}]]</div>
+				</div>
+				<div class="card-body">
+					<a th:href="@{|product/detail/${p.id}|}">
+						<img th:src="@{|/assets/images/${p.image}|}">
+					</a>
+				</div>
+				<div class="card-footer d-flex justify-content-between mainColor2 text-white" >
+					<b class="d-flex align-items-center btn btn-primary btn-sm">$[[${p.price}]]</b>
+					<div class="button-content">
+						<span class="btn btn-success btn-sm" th:text="${#dates.format(p.createDate, 'dd-MM-yyyy')}"></span>
+						<button class="btn btn-danger"
+						th:classappend="${p.available}?'':disabled"
+						th:attr="ng-click=@{|cart.add(${p.id})|}">
+							<i class="fa-solid fa-cart-shopping"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Pagination-->
+		<nav aria-label="Page navigation example">
+		  <ul class="pagination justify-content-center">
+		    <li class="page-item" th:classappend="${items.number==0} ? disabled">
+		      <a class="page-link"  th:href="@{|product/list?cid=${cateID}&sortBy=${sort}&page=${items.number-1}|}" aria-label="Previous">
+		        <span aria-hidden="true">&laquo;</span>
+		      </a>
+		    </li>
+		    <th:block th:each="pagenumber:${pageNumbers}">
+		    	<li class="page-item"
+		    	th:classappend="${pagenumber==items.number+1} ? active"		    	
+		    	><a class="page-link" th:href="@{|product/list?cid=${cateID}&sortBy=${sort}&page=${pagenumber-1}|}">[[${pagenumber}]]</a></li>
+		    </th:block>
+
+		    <li class="page-item" th:classappend="${items.number==items.totalPages-1} ? disabled">
+		      <a class="page-link" th:href="@{|product/list?cid=${cateID}&sortBy=${sort}&page=${items.number+1}|}" aria-label="Next">
+		        <span aria-hidden="true">&raquo;</span>
+		      </a>
+		    </li>
+		  </ul>
+		</nav>
+     <!-- Pagination Edge-->
+	</main>
+</html>

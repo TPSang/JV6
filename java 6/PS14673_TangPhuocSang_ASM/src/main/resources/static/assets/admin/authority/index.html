@@ -1,0 +1,23 @@
+<div class="card mt-3 p-0">
+    <div class="card-header bg-warning">
+        <h3>Authorizing EDITION</h3>
+    </div>
+    <div class="card-body ">
+    	<table class="table table-bordered">
+    		<thead class="bg-secondary text-white">
+    			<tr>
+    				<th></th>
+    				<th ng-repeat="role in roles" class="text-center">{{role.name}}</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr ng-repeat="acc in admins">
+    				<td>{{acc.fullname}}</td>
+    				<th ng-repeat="role in roles" class="text-center">
+    					<input ng-checked="authority_of(acc,role)" ng-click="authority_changed(acc,role)" type="checkbox" />
+    				</th>
+    			</tr>
+    		</tbody>
+    	</table>
+    </div>
+</div>

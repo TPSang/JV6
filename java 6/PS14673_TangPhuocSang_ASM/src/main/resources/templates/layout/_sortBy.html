@@ -1,0 +1,9 @@
+<div class="list-group mainBorder rounded-0 mt-3" xmlns:th="http://wwww.thymeleaf.org">
+	<a class="list-group-item list-group-item-action mainColor text-white fw-bold borderBottom" aria-current="true">
+	  <b><i class="fa-solid fa-filter me-2"></i></b> [[#{sidebar.sortBy}]]
+	</a>
+	<a th:href="@{|product/list?cid=${cateID}&sortBy=priceDown|}" class="list-group-item list-group-item-action"><b><i class="fa-solid fa-arrow-down-9-1 me-2"></i></b>[[#{sidebar.highest}]]</a>
+	<a th:href="@{|product/list?cid=${cateID}&sortBy=priceUp|}" class="list-group-item list-group-item-action"><b><i class="fa-solid fa-arrow-up-1-9 me-2"></i></b>[[#{sidebar.lowest}]]</a>
+	<a th:href="@{|product/list?cid=${cateID}&sortBy=dateDown|}" class="list-group-item list-group-item-action"><b><i class="fa-solid fa-arrow-down-a-z me-2"></i></b>[[#{sidebar.newDate}]]</a>
+	<a th:href="@{|product/list?cid=${cateID}&sortBy=dateUp|}" class="list-group-item list-group-item-action"><b><i class="fa-solid fa-arrow-up-z-a me-2"></i></b>[[#{sidebar.oldDate}]]</a>
+</div>

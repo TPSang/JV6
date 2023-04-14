@@ -1,0 +1,37 @@
+<div class="card">
+	<div class="card-header">
+		<h3 class="mt-2">ACCOUNT LIST</h3>
+	</div>
+    <div class="card-body">
+        <table class="table table-bordered">
+        	<thead class="bg-success text-white" style="font-variant: small-caps;">
+        		<tr>
+        			<th>User-name</th>
+        			<th>Full-Name</th>
+        			<th>Email</th>
+        			<th>Photo</th>
+        			<th></th>
+        		</tr>
+        	</thead>
+        	<tbody>
+        		<tr ng-repeat="item in pager.items">
+        			<td>{{item.username}}</td>
+        			<td>{{item.fullname}}</td>
+        			<td>{{item.email}}</td>
+        			<td>{{item.photo}}</td>
+        			<td class="text-center">
+        				<button ng-click="edit(item)" class="btn btn-warning"><i class="fa-solid fa-square-pen"></i></button>
+        				<!-- <button ng-click="delete(item)" c class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button> -->
+        			</td>
+        		</tr>
+        	</tbody>
+        </table>
+    </div>
+    <div class="card-footer text-center">
+    	<button ng-click="pager.first()" class="btn btn-danger" style="width: 42px;"><i class="fa-solid fa-backward-step"></i></button>
+    	<button ng-click="pager.previous()" class="btn btn-primary"><i class="fa-solid fa-backward"></i></button>
+    	<button class="btn btn-success">{{pager.page+1}} of {{pager.count}}</button>
+    	<button ng-click="pager.next()" class="btn btn-primary"><i class="fa-solid fa-forward"></i></button>
+    	<button ng-click="pager.last()" class="btn btn-danger" style="width: 42px;"><i class="fa-solid fa-forward-step"></i></button>
+    </div>
+</div>

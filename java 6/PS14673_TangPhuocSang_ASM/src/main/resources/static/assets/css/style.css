@@ -1,0 +1,106 @@
+:root{
+    --mainColor:#161d24;
+    --mainColor2:#BAB1AD;
+    /* --mainColor:#41b92c; */
+    --inputTextColor:rgb(236, 233, 233);
+    --inputTextColorFocus:#ffffff;
+    --spacing:15px;
+    --myRed:#F93154;
+    --myYellow:#FFC107;
+    --myYellow1:#F39C12;
+    --myBlue:#1266F1;
+    --myGreen:#00B74A;
+    --myAqua:#39C0ED;
+    --myWhite:#FBFBFB;
+    --myBlack:#262626;
+    --myOrange:#FD7E14;
+    --myPink:#E83E8C;
+    --myGray:#BAB1AD;
+    --myPurple:#6610F2;
+    --myBorderRadius:12px;
+    --myTrueWhite: #ffffff;
+}
+.mainColor{
+    background-color:var(--mainColor);
+}
+.mainColor2{
+	background-color:var(--mainColor2);
+}
+.bg-green{background-color: var(--myGreen) !important;}
+.bg-red{background-color: var(--myRed) !important;}
+.bg-yellow{background-color: var(--myYellow) !important;}
+.bg-yellow1{background-color: var(--myYellow1) !important;}
+.bg-blue{background-color: var(--myBlue) !important;}
+.bg-aqua{background-color: var(--myAqua) !important;}
+.bg-white{background-color: var(--myWhite) !important;}
+.bg-black{background-color: var(--myBlack) !important}
+.bg-orange{background-color: var(--myOrange) !important;}
+.bg-pink{background-color: var(--myPink) !important;}
+.bg-gray{background-color: var(--myGray) !important;}
+.bg-purple{background-color: var(--myPurple) !important;}
+.bg-truewhite{background-color: var(--myTrueWhite) !important;}
+
+.font-green{color: var(--myGreen);}
+.font-red{color: var(--myRed);}
+.font-yellow{color: var(--myYellow);}
+.font-blue{color: var(--myBlue);}
+.font-aqua{color: var(--myAqua);}
+.font-white{color: var(--myWhite);}
+.font-black{color: var(--myBlack)}
+.font-orange{color: var(--myOrange);}
+.font-pink{color: var(--myPink);}
+.font-gray{color: var(--myGray);}
+.font-purple{color: var(--myPurple);}
+/* Custom height and centering polyItem */
+.poly-item{
+	border:solid 1px var(--mainColor);
+}
+.poly-item img{
+	height: 150px;
+	max-width: 95%;
+}
+.poly-item .card-title{
+	font-weight: bold;
+	color: white;
+	margin-top: 8px;
+}
+.poly-item{
+	height:100%;
+}
+.poly-item .card-header{
+	height:100%;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+/* Custom height and centering polyItem Edge*/
+
+/* Product Detail */
+.poly-item-detail .card{
+	margin-top:16px;
+	padding: 0;
+	border:solid 1px var(--mainColor);
+}
+.poly-item-detail img{
+	max-width: 80%;
+}
+/* Product Detail  Edge*/
+
+.carousel-item{
+    transition: -webkit-transform .6s ease;
+    transition: transform .6s ease;
+    transition: transform .6s ease,-webkit-transform .6s ease;
+}
+/*Border Index Css*/
+.mainBorder{
+	border:solid 1px var(--mainColor);
+}
+/*Border Index Css Edge*/
+/*Border bottom Css*/
+.borderBottom{
+	border-bottom: 3px solid var(--myRed);
+}
+.borderBottom:hover{
+	background-color:  var(--mainColor);
+}
+/*Border bottom edge*/
